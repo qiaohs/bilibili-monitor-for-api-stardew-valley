@@ -11,4 +11,4 @@
 ![图1](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi.gif)
 ![图2](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi2.gif)
 ![图3](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi3.gif)
-![图4](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi1.gif)
+![图4](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi1.png)
