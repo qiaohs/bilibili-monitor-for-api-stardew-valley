@@ -7,7 +7,8 @@
 
 若无法安装，参见[greasyfork.org/zh-CN/help/installing-user-scripts](https://greasyfork.org/zh-CN/help/installing-user-scripts)中第一步首先添加浏览器插件。
 
-效果如图所示
+## 图例
 ![图1](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi.gif)
 ![图2](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi2.gif)
 ![图3](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi3.gif)
+![图4](https://raw.githubusercontent.com/qiaohs/bilibili-monitor-for-api-stardew-valley/master/imgs/pi1.gif)
