@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BiliBili 少年Pi的视频更新监控 (2019星露谷物语)
 // @namespace    https://steamcommunity.com/id/id06/
-// @version      0.2
+// @version      0.3
 // @description  失眠小助手→‿→
 // @author       https://space.bilibili.com/4460411/#黑山東雲光圈研究所
 // @match        https://www.bilibili.com/pi
@@ -111,4 +111,5 @@ function count(){
 	setTimeout(function(){if(status!=2){count()}},1000);
 }
 count();
+$('.error-container').on('click','div.font',function(){window.open('https://www.bilibili.com/video/av42921830');});
 })();
