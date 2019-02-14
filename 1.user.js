@@ -19,7 +19,7 @@ $('.error-container').html(`        <div class="error-panel server-error error-4
 				<div class="face-buy-header">
 					<img src="https://i0.hdslb.com/bfs/face/d851f48a579778b06249bf3debaa62d353694e91.jpg" class="face-buy-avatar">
 					<img src="//i2.hdslb.com/bfs/face/67ed957ae789852bcc59b1c1e3097ea23179f793.png" class="face-buy-g">
-					<div class="face-buy-name">日更高产 Pi 今日的
+					<div class="face-buy-name">日更高产 Pi 的
 						<div class="font">绿帽谷物语
 							<div class="num">0</div>
 						</div>
