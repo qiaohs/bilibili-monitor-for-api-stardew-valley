@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BiliBili 少年Pi的视频更新监控 (2019星露谷物语)
 // @namespace    https://steamcommunity.com/id/id06/
-// @version      0.3
+// @version      0.4
 // @description  失眠小助手→‿→
 // @author       https://space.bilibili.com/4460411/#黑山東雲光圈研究所
 // @match        https://www.bilibili.com/pi
@@ -104,10 +104,11 @@ var start = 9;
 var start1 = 1;
 var step = -1;
 function count(){
-	$('.iconf').html(start1+'s');
+    var not=start1==0?'获取中':start1+'s';
+	$('.iconf').html(not);
 	start1 += step;
 	if(start1 < 0){start1 = start;}
-    if(start1==0){check();}
+    if(start1==start){check();}
 	setTimeout(function(){if(status!=2){count()}},1000);
 }
 count();
