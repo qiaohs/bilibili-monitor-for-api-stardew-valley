@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BiliBili 少年Pi的视频更新监控 (2019星露谷物语)
 // @namespace    https://steamcommunity.com/id/id06/
-// @version      0.4
+// @version      0.5
 // @description  失眠小助手→‿→
 // @author       https://space.bilibili.com/4460411/#黑山東雲光圈研究所
 // @match        https://www.bilibili.com/pi
@@ -71,7 +71,7 @@ function numup1(element,a){
 		$i.remove();
 	});
 }
-var pnum=0,status=0,getpnum=1;//0无更新，1审核中，2已更新，结束
+var pnum=0,status=0,video=0;//0无更新，1审核中，2已更新，结束
 function check(element){
     $.get('https://api.bilibili.com/x/web-interface/archive/stat?aid=42921830',function(data){
         numup($('.playcount font'),data.data.view);
@@ -86,18 +86,41 @@ function check(element){
         var has=0;
         $.each(data.data.vlist,function(i,e){if(e.aid=='42921830'){has=1;}});
 
-        if(has==1&&status==0){numup1($('.m-loading span'),"\u5495\u5495\u5495\u007e");$('.error-container').removeClass('g blinkf').addClass('blink');}
-        else if(has==0&&status==0){$('.result').html('正在审核中！');status=1;$('.error-container').removeClass('g blink').addClass('blinkf');$('.m-loading span').html('监控中... 将在视频审核通过后发出通知！');GM_notification('新视频已进入审核阶段！', '注意啦啦啦啦啦', 'https://i0.hdslb.com/bfs/face/d851f48a579778b06249bf3debaa62d353694e91.jpg');}
-        else if(has==0&&status==1){numup1($('.m-loading span'),"\u5ba1\u6838\u541b\u53c8\u7761\u7740\u4e86\uff01\u007a\u007a\u005a");}
-        else if(has==1&&status==1){$('.result').html('已更新！');status=2;$('.error-container').removeClass('blinkf blink').addClass('g');$('.m-loading').html('监控完成，还不快去看视频？');GM_notification('战神的新视频更新啦！', '视频更新啦！视频更新啦！', 'https://i0.hdslb.com/bfs/face/d851f48a579778b06249bf3debaa62d353694e91.jpg');}
+        if(has==1&&status==0){
+			numup1($('.m-loading span'),"\u5495\u5495\u5495\u007e");
+			$('.error-container').removeClass('g blinkf').addClass('blink');}
+        else if(has==0&&status==0){
+			$('.result').html('正在审核中！');
+			status=1;
+			$('.error-container').removeClass('g blink').addClass('blinkf');
+			$('.m-loading span').html('监控中... 将在视频审核通过后发出通知！');
+			GM_notification('新视频已进入审核阶段！', '注意啦啦啦啦啦', 'https://i0.hdslb.com/bfs/face/d851f48a579778b06249bf3debaa62d353694e91.jpg');}
+        else if(has==0&&status==1){
+			numup1($('.m-loading span'),"\u5ba1\u6838\u541b\u53c8\u7761\u7740\u4e86\uff01\u007a\u007a\u005a");}
+        else if(has==1&&status==1){
+			$('.result').html('审核结束');status=3;
+			$('.m-loading').html('若审核通过，视频将在十余分钟后出现，届时将会通知');}
+        else if(has==1&&status==1){
+			numup1($('.m-loading span'),"有没有？");}
+    },'json');
 
-    },'json');
-    if(getpnum==1){
+
     $.get('https://api.bilibili.com/x/web-interface/view?aid=42921830',function(data){
-        numup($('.num'),data.data.videos);
+        if(video==0){
+			numup($('.num'),data.data.videos);
+			video=data.data.videos;
+		}else{
+            if(video!=data.data.videos){
+				numup($('.num'),data.data.videos);
+				$('.result').html('<font style="color:green">第'+data.data.videos+'P已更新！</font>');
+				status=2;
+				$('.error-container').removeClass('blinkf blink').addClass('g');
+				$('.m-loading').html('监控完成，还不快去看视频？');
+				GM_notification('战神的新视频更新啦！', '视频更新啦！视频更新啦！', 'https://i0.hdslb.com/bfs/face/d851f48a579778b06249bf3debaa62d353694e91.jpg');}
+        }
     },'json');
-        getpnum=0;
-    }
+
+
 }
 
 var start = 9;
