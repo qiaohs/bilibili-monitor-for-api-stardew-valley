@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BiliBili 少年Pi的视频更新监控 (2019星露谷物语)
 // @namespace    https://steamcommunity.com/id/id06/
-// @version      0.5
+// @version      0.6
 // @description  失眠小助手→‿→
 // @author       https://space.bilibili.com/4460411/#黑山東雲光圈研究所
 // @match        https://www.bilibili.com/pi
@@ -91,7 +91,7 @@ function check(element){
 			$('.error-container').removeClass('g blinkf').addClass('blink');}
         else if(has==0&&status==0){
 			$('.result').html('正在审核中！');
-			status=1;
+			status=1;start=3;
 			$('.error-container').removeClass('g blink').addClass('blinkf');
 			$('.m-loading span').html('监控中... 将在视频审核通过后发出通知！');
 			GM_notification('新视频已进入审核阶段！', '注意啦啦啦啦啦', 'https://i0.hdslb.com/bfs/face/d851f48a579778b06249bf3debaa62d353694e91.jpg');}
