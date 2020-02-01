@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         BiliBili 少年Pi的视频更新监控 (2019星露谷物语)
+// @name         【2020更新】BiliBili 少年Pi的视频更新监控 (2019星露谷物语)
 // @namespace    https://steamcommunity.com/id/id06/
-// @version      0.6
+// @version      0.7
 // @description  失眠小助手→‿→
 // @author       https://space.bilibili.com/4460411/#黑山東雲光圈研究所
 // @match        https://www.bilibili.com/pi
@@ -82,7 +82,7 @@ function check(element){
         numup($('.collect font'),data.data.favorite);
         numup($('.share font'),data.data.share);
     },'json');
-    $.get('https://space.bilibili.com/ajax/member/getSubmitVideos?mid=13046&page=1&pagesize=25&order=pubdate',function(data){
+    $.get('https://space.bilibili.com/ajax/member/getSubmitVideos?mid=13046&page=2&pagesize=70&order=pubdate',function(data){
         var has=0;
         $.each(data.data.vlist,function(i,e){if(e.aid=='42921830'){has=1;}});
 
